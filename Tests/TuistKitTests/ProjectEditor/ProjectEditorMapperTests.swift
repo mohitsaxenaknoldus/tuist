@@ -181,10 +181,7 @@ final class ProjectEditorMapperTests: TuistUnitTestCase {
         XCTAssertEqual(project.path, sourceRootPath.appending(component: projectName))
         XCTAssertEqual(project.name, projectName)
         XCTAssertEqual(project.settings, Settings(
-            base: [
-                "ONLY_ACTIVE_ARCH": "YES",
-                "EXCLUDED_ARCHS": "x86_64",
-            ],
+            base: [:],
             configurations: Settings.default.configurations,
             defaultSettings: .recommended
         ))
@@ -260,10 +257,7 @@ final class ProjectEditorMapperTests: TuistUnitTestCase {
         XCTAssertEqual(project.path, sourceRootPath.appending(component: projectName))
         XCTAssertEqual(project.name, projectName)
         XCTAssertEqual(project.settings, Settings(
-            base: [
-                "ONLY_ACTIVE_ARCH": "YES",
-                "EXCLUDED_ARCHS": "x86_64",
-            ],
+            base: [:],
             configurations: Settings.default.configurations,
             defaultSettings: .recommended
         ))
@@ -373,10 +367,7 @@ final class ProjectEditorMapperTests: TuistUnitTestCase {
         XCTAssertEqual(project.path, sourceRootPath.appending(component: projectName))
         XCTAssertEqual(project.name, projectName)
         XCTAssertEqual(project.settings, Settings(
-            base: [
-                "ONLY_ACTIVE_ARCH": "YES",
-                "EXCLUDED_ARCHS": "x86_64",
-            ],
+            base: [:],
             configurations: Settings.default.configurations,
             defaultSettings: .recommended
         ))
@@ -454,10 +445,7 @@ final class ProjectEditorMapperTests: TuistUnitTestCase {
         XCTAssertEqual(project.path, sourceRootPath.appending(component: projectName))
         XCTAssertEqual(project.name, projectName)
         XCTAssertEqual(project.settings, Settings(
-            base: [
-                "ONLY_ACTIVE_ARCH": "YES",
-                "EXCLUDED_ARCHS": "x86_64",
-            ],
+            base: [:],
             configurations: Settings.default.configurations,
             defaultSettings: .recommended
         ))
@@ -549,10 +537,7 @@ final class ProjectEditorMapperTests: TuistUnitTestCase {
         XCTAssertEqual(project.path, sourceRootPath.appending(component: projectName))
         XCTAssertEqual(project.name, projectName)
         XCTAssertEqual(project.settings, Settings(
-            base: [
-                "ONLY_ACTIVE_ARCH": "YES",
-                "EXCLUDED_ARCHS": "x86_64",
-            ],
+            base: [:],
             configurations: Settings.default.configurations,
             defaultSettings: .recommended
         ))
@@ -743,10 +728,7 @@ final class ProjectEditorMapperTests: TuistUnitTestCase {
         XCTAssertEqual(manifestsProject.path, sourceRootPath.appending(component: manifestsProjectName))
         XCTAssertEqual(manifestsProject.name, manifestsProjectName)
         XCTAssertEqual(manifestsProject.settings, Settings(
-            base: [
-                "ONLY_ACTIVE_ARCH": "YES",
-                "EXCLUDED_ARCHS": "x86_64",
-            ],
+            base: [:],
             configurations: Settings.default.configurations,
             defaultSettings: .recommended
         ))
@@ -770,10 +752,7 @@ final class ProjectEditorMapperTests: TuistUnitTestCase {
         XCTAssertEqual(pluginsProject.path, sourceRootPath.appending(component: pluginsProjectName))
         XCTAssertEqual(pluginsProject.name, pluginsProjectName)
         XCTAssertEqual(pluginsProject.settings, Settings(
-            base: [
-                "ONLY_ACTIVE_ARCH": "YES",
-                "EXCLUDED_ARCHS": "x86_64",
-            ],
+            base: [:],
             configurations: Settings.default.configurations,
             defaultSettings: .recommended
         ))

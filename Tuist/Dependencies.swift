@@ -1,7 +1,10 @@
 import ProjectDescription
 
+let baseSettings: Settings = .settings()
+
 let dependencies = Dependencies(
-    swiftPackageManager: [
+  swiftPackageManager: .init(
+    [
         .package(url: "https://github.com/tuist/XcodeProj.git", .upToNextMajor(from: "8.5.0")),
         .package(url: "https://github.com/CombineCommunity/CombineExt.git", .upToNextMajor(from: "1.3.0")),
         .package(url: "https://github.com/apple/swift-tools-support-core.git", .upToNextMinor(from: "0.2.0")),
@@ -21,5 +24,11 @@ let dependencies = Dependencies(
         .package(url: "https://github.com/SwiftGen/SwiftGen", .exact("6.5.0")),
         .package(url: "https://github.com/kylef/PathKit.git", .upToNextMajor(from: "1.0.0")),
     ],
-    platforms: [.macOS]
+    productTypes: [
+      "PathKit": .framework
+    ],
+    baseSettings: baseSettings,
+    targetSettings: [:]
+  ),
+  platforms: [.macOS]
 )
