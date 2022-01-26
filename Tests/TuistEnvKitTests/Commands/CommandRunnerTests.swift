@@ -75,7 +75,7 @@ final class CommandRunnerTests: TuistUnitTestCase {
     func test_when_version_file() throws {
         let temporaryPath = try self.temporaryPath()
         let binaryPath = temporaryPath.appending(component: "tuist")
-        arguments = ["tuist", "--help"]
+        arguments = ["tuist", "--help", "--verbose"]
 
         versionsController.versionsStub = []
         versionsController.pathStub = {
