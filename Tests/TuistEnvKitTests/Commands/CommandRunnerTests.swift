@@ -86,7 +86,7 @@ final class CommandRunnerTests: TuistUnitTestCase {
 
         var installArgs: [String] = []
         installer.installStub = { version in installArgs.append(version) }
-        system.succeedCommand([binaryPath.pathString, "--help"], output: "")
+        system.succeedCommand([binaryPath.pathString, "--help", "--verbose"], output: "")
 
         try subject.run()
 
