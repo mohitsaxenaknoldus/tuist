@@ -2,7 +2,9 @@
 
 Please, check out guidelines: https://keepachangelog.com/en/1.0.0/
 
-## NextMajor
+## Next
+
+### Changed
 
 - **Breaking** remove `focus` command and merge its functionality inside `generate`. [#3912](https://github.com/tuist/tuist/pull/3912) by [@danyf90](https://github.com/danyf90):
   - **Motivation:**: The command were sharing a lot of responsibilities, and having a single one provides a cleaner CLI.
@@ -28,6 +30,7 @@ Please, check out guidelines: https://keepachangelog.com/en/1.0.0/
   - **Motivation:** Old versions usage is less then 5%.
 - **Breaking** `TargetScript.Script` cases `.tool(_ path: String, _ args: [String])` and `.scriptPath(_ path: Path, args: [String])` are now `.tool(path: String, args: [String])` and `.scriptPath(path: Path, args: [String])` [#4030](https://github.com/tuist/tuist/pull/4030) by [@adellibovi](https://github.com/adellibovi)
   - **Motivation:** It enabled to get rid of custom Codable conformance.
+- **Breaking** the used tuist version and the manifests compilation times are no longer printed at default log level. Use the `--verbose` flag to print them. [#4052](https://github.com/tuist/tuist/pull/4052) by [@danyf90](https://github.com/danyf90)
 
 ## Next
 
@@ -36,7 +39,6 @@ Please, check out guidelines: https://keepachangelog.com/en/1.0.0/
 ### Changed
 
 - Use GitHub tags (via `git ls-remote`) to determine the latest Tuist version when installing/updating Tuist [#3985](https://github.com/tuist/tuist/pull/3985) by [@ezraberch](https://github.com/ezraberch)
-- The used tuist version and the manifests compilation times are no longer printed at default log level. Use the `--verbose` flag to print them. [#4052](https://github.com/tuist/tuist/pull/4052) by [@danyf90](https://github.com/danyf90)
 
 ### Added
 
