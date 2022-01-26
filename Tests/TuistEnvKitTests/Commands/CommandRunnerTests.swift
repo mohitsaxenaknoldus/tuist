@@ -75,7 +75,7 @@ final class CommandRunnerTests: TuistUnitTestCase {
     func test_when_version_file() throws {
         let temporaryPath = try self.temporaryPath()
         let binaryPath = temporaryPath.appending(component: "tuist")
-        arguments = ["tuist", "--help", "--verbose"]
+        arguments = ["tuist", "--help"]
 
         versionsController.versionsStub = []
         versionsController.pathStub = {
@@ -86,14 +86,10 @@ final class CommandRunnerTests: TuistUnitTestCase {
 
         var installArgs: [String] = []
         installer.installStub = { version in installArgs.append(version) }
-        system.succeedCommand([binaryPath.pathString, "--help", "--verbose"], output: "")
+        system.succeedCommand([binaryPath.pathString, "--help"], output: "")
 
         try subject.run()
 
-        XCTAssertPrinterOutputContains("""
-        Using version 3.2.1 defined at \(temporaryPath.pathString)
-        Version 3.2.1 not found locally. Installing...
-        """)
         XCTAssertEqual(installArgs.count, 1)
         XCTAssertEqual(installArgs.first, "3.2.1")
     }
