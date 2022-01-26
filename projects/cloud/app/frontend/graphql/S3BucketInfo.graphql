@@ -1,0 +1,6 @@
+fragment S3BucketInfo on S3Bucket {
+    name
+    accessKeyId
+    secretAccessKey
+    accountId
+}

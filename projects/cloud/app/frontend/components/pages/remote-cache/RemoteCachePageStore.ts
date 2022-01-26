@@ -2,6 +2,7 @@ import { CreateS3BucketDocument } from '../../../graphql/types';
 import { ApolloClient } from '@apollo/client';
 import { SelectOption } from '@shopify/polaris';
 import { makeAutoObservable } from 'mobx';
+import ProjectStore from '../../../stores/ProjectStore';
 
 class RemoteCachePageStore {
   bucketName = '';
@@ -16,9 +17,14 @@ class RemoteCachePageStore {
   selectedOption = 'new';
 
   client: ApolloClient<object>;
+  projectStore: ProjectStore;
 
-  constructor(client: ApolloClient<object>) {
+  constructor(
+    client: ApolloClient<object>,
+    projectStore: ProjectStore,
+  ) {
     this.client = client;
+    this.projectStore = projectStore;
     makeAutoObservable(this);
   }
 
@@ -36,7 +42,7 @@ class RemoteCachePageStore {
 
   async applyChangesButtonClicked(accountId: string) {
     if (this.isCreatingBucket) {
-      await this.client.mutate({
+      const { data } = await this.client.mutate({
         mutation: CreateS3BucketDocument,
         variables: {
           input: {
@@ -47,6 +53,7 @@ class RemoteCachePageStore {
           },
         },
       });
+      this.projectStore.project?.remoteCacheStorage =
     }
   }
 }
