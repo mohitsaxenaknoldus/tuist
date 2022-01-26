@@ -33,12 +33,6 @@ module Fourier
                 swift_build_directory: swift_build_directory,
                 xcode_paths: xcode_paths
               )
-              build_project_library(
-                name: "ProjectAutomation",
-                output_directory: build_directory,
-                swift_build_directory: swift_build_directory,
-                xcode_paths: xcode_paths
-              )
 
               Utilities::Output.section("Building Tuist...")
               build_tuist(
@@ -71,8 +65,6 @@ module Fourier
                   "tuist",
                   "ProjectDescription.framework",
                   "ProjectDescription.framework.dSYM",
-                  "ProjectAutomation.framework",
-                  "ProjectAutomation.framework.dSYM",
                   "Templates",
                   "vendor",
                   "cocoapods-interactor"
